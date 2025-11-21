@@ -1,1 +1,50 @@
 
+import java.lang.Object;
+class Tast
+{
+int id;
+String name;
+Tast(int id,String name)
+{
+	this.id=id;
+	this.name=name;
+	
+}
+public String toString()
+{
+return "id:"+id+"  name:"+name;
+}
+public boolean equals(Object obj)
+{
+	if(obj==null) return false;
+	if(!(obj instanceof Tast)) return false;
+	Tast obj1=(Tast) obj;
+	if(this.id==obj1.id && this.name.equals(obj1.name))
+	{
+		return true;
+	}
+	return false;
+}
+   public int hashCode() {
+		
+		return Integer.hashCode(id);
+	}
+
+
+}
+
+
+class ObjectClassTest
+{
+public static void main(String args[])
+{
+Tast obj=new Tast(3211,"Krish");
+Tast obj1=null;
+String str="hello";
+System.out.println(obj.equals(obj1));
+System.out.println(obj);
+System.out.println(obj.hashCode());
+System.out.println(obj.getClass());
+//System.gc();
+}
+}
